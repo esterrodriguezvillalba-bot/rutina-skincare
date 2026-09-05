@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main
@@ -32,28 +34,35 @@ export default function Home() {
           Tu asistente científico para el cuidado de la piel.
         </p>
 
-        <button style={buttonStyle}>☀️ Mi rutina</button>
+        <Link href="/rutina" style={linkStyle}>
+          <div style={buttonStyle}>☀️ Mi rutina</div>
+        </Link>
 
-        <button style={buttonStyle}>📚 Biblioteca científica</button>
+        <Link href="/biblioteca" style={linkStyle}>
+          <div style={buttonStyle}>📚 Biblioteca científica</div>
+        </Link>
 
-        <button style={buttonStyle}>🧴 Mis productos</button>
+        <Link href="/productos" style={linkStyle}>
+          <div style={buttonStyle}>🧴 Mis productos</div>
+        </Link>
 
-        <button style={buttonStyle}>📱 Mis dispositivos</button>
+        <Link href="/dispositivos" style={linkStyle}>
+          <div style={buttonStyle}>📱 Mis dispositivos</div>
+        </Link>
 
-        <a
-          href="/perfil"
-          style={{
-            textDecoration: "none",
-          }}
-        >
-          <button style={buttonStyle}>
-            👤 Mi perfil
-          </button>
-        </a>
+        <Link href="/perfil" style={linkStyle}>
+          <div style={buttonStyle}>👤 Mi perfil</div>
+        </Link>
       </div>
     </main>
   );
 }
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "inherit",
+  display: "block",
+};
 
 const buttonStyle = {
   width: "100%",
@@ -64,4 +73,5 @@ const buttonStyle = {
   border: "1px solid #ddd",
   background: "white",
   cursor: "pointer",
+  boxSizing: "border-box" as const,
 };
