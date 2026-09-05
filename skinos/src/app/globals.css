@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* ============================================================
+   SKINOS · CORRECCIÓN MODO OSCURO
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #ededed;
+    background: #0a0a0a;
+  }
+
+  main h1,
+  main h2,
+  main h3 {
+    color: #ededed !important;
+  }
+
+  main p {
+    color: #c8c8c8;
+  }
+
+  /* Tarjetas claras */
+  main section[style*="#fff"],
+  main section[style*="#ffffff"],
+  main div[style*="#fff"],
+  main div[style*="#ffffff"] {
+    color: #111 !important;
+  }
+
+  main section[style*="#fff"] h1,
+  main section[style*="#fff"] h2,
+  main section[style*="#fff"] h3,
+  main section[style*="#ffffff"] h1,
+  main section[style*="#ffffff"] h2,
+  main section[style*="#ffffff"] h3,
+  main div[style*="#fff"] h1,
+  main div[style*="#fff"] h2,
+  main div[style*="#fff"] h3,
+  main div[style*="#ffffff"] h1,
+  main div[style*="#ffffff"] h2,
+  main div[style*="#ffffff"] h3 {
+    color: #111 !important;
+  }
+}
