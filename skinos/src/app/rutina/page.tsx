@@ -28,12 +28,13 @@ const rutinaBase = {
     "Hidratación",
     "Protector solar SPF 50+",
   ],
-  noche: [
-    "Doble limpieza",
-    "Tratamiento activo",
-    "Péptidos / reparación",
-    "Hidratación",
-  ],
+ noche: [
+  "Doble limpieza",
+  "Péptidos / reparación",
+  "Tratamiento con dispositivo",
+  "Tratamiento activo",
+  "Hidratación",
+],
 };
 
 const detalles: Record<string, PasoDetalle> = {
@@ -138,6 +139,18 @@ export default function RutinaPage() {
   }
 
   const pasos = rutinaBase[momento];
+  const diasSemana = [
+  "domingo",
+  "lunes",
+  "martes",
+  "miercoles",
+  "jueves",
+  "viernes",
+  "sabado",
+] as const;
+
+const diaActual = diasSemana[new Date().getDay()];
+const planDispositivo = rutinaSemanal[diaActual];
 
   const tieneManchas =
     perfil?.manchas || perfil?.objetivos?.includes("Manchas");
@@ -300,8 +313,26 @@ export default function RutinaPage() {
 
         {pasos.map((paso, index) => {
           const completado = completados.includes(paso);
-          const abierto = abiertos.includes(paso);
-          const detalle = detalles[paso];
+const abierto = abiertos.includes(paso);
+
+const detalle =
+  paso === "Tratamiento con dispositivo"
+    ? {
+        nombre: "Tratamiento con dispositivo",
+        dispositivo: "Panasonic VITALIFT RF EX EH-SR86",
+        funcion: planDispositivo.especial
+          ? `${planDispositivo.especial} · 6 minutos`
+          : planDispositivo.eyeCare
+            ? "EYE CARE · 2 minutos"
+            : "Descanso de tratamiento especial",
+        frecuencia: "Según la rotación semanal de SkinOS",
+        nota: planDispositivo.especial
+          ? "Hoy corresponde un tratamiento especial con el dispositivo."
+          : planDispositivo.eyeCare
+            ? "Hoy corresponde EYE CARE. No se combina con otro tratamiento especial."
+            : "Hoy no corresponde tratamiento especial con el dispositivo.",
+      }
+    : detalles[paso];
 
           return (
             <div
