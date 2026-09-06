@@ -7,7 +7,7 @@ export default function Home() {
         minHeight: "100vh",
         background: "#f7f7f5",
         fontFamily: "Arial, sans-serif",
-        padding: "40px",
+        padding: "40px 20px",
       }}
     >
       <div
@@ -20,6 +20,7 @@ export default function Home() {
           style={{
             fontSize: "42px",
             marginBottom: "8px",
+            color: "#111",
           }}
         >
           SkinOS
@@ -27,8 +28,10 @@ export default function Home() {
 
         <p
           style={{
-            color: "#666",
+            color: "#555",
             marginBottom: "40px",
+            fontSize: "18px",
+            lineHeight: "1.5",
           }}
         >
           Tu asistente científico para el cuidado de la piel.
@@ -60,7 +63,7 @@ export default function Home() {
 
 const linkStyle = {
   textDecoration: "none",
-  color: "inherit",
+  color: "#111",
   display: "block",
 };
 

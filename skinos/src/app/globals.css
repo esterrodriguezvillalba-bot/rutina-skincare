@@ -66,3 +66,28 @@ body {
     color: #111 !important;
   }
 }
+/* ============================================================
+   SKINOS · PÁGINA PRINCIPAL · CONTRASTE
+   Mantiene la portada clara aunque el dispositivo esté en
+   modo oscuro.
+   ============================================================ */
+
+main[style*="#f7f7f5"] {
+  color: #111 !important;
+}
+
+main[style*="#f7f7f5"] h1 {
+  color: #111 !important;
+}
+
+main[style*="#f7f7f5"] p {
+  color: #666 !important;
+}
+
+main[style*="#f7f7f5"] a {
+  color: #111 !important;
+}
+
+main[style*="#f7f7f5"] a div {
+  color: #111 !important;
+}
