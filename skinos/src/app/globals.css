@@ -91,3 +91,12 @@ main[style*="#f7f7f5"] a {
 main[style*="#f7f7f5"] a div {
   color: #111 !important;
 }
+@media (prefers-color-scheme: dark) {
+  main [style*="#ffffff"] {
+    color: #111 !important;
+  }
+
+  main [style*="#ffffff"] * {
+    color: #111 !important;
+  }
+}
